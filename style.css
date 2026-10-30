@@ -363,3 +363,7 @@ body{font-weight:400}
 }
 @media (max-width:380px){.preset-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:760px){#genNotes:empty{display:none}.refhead small{margin-left:0;padding-left:0}.gen-col{gap:10px}}
+/* PYJ 픽스컴퍼니 로고 */
+.sp-logo svg.pyj-logo{width:auto;height:76px;color:#fff;stroke:none}
+.credit svg.pyj-logo{width:auto;height:40px;color:#9fb4c4;stroke:none}
+.pyj-logo g{stroke:currentColor}
