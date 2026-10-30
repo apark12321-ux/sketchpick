@@ -18,7 +18,8 @@ svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke
 .sp-mark{width:68px;height:68px;margin-bottom:14px}
 .sp-title{font-size:44px;font-weight:800;letter-spacing:-1.5px}
 .sp-sub{margin-top:8px;font-size:12px;letter-spacing:4px;opacity:.75}
-.sp-logo{position:absolute;bottom:calc(36px + env(safe-area-inset-bottom));opacity:.9}
+.sp-logo{position:absolute;bottom:calc(36px + env(safe-area-inset-bottom));opacity:.9;display:flex;flex-direction:column;align-items:center;gap:6px}
+.sp-logo .pyj-sub{color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.14em;padding-left:.14em}
 .sp-logo svg{width:54px;height:54px;stroke:none}
 @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 
@@ -92,7 +93,8 @@ button.wide,label.wide{display:flex;align-items:center;justify-content:center;wi
 .hint.warn{color:#8a5a00;background:#fff6e0;border-radius:10px;padding:8px 10px}
 .presets{display:flex;flex-wrap:wrap;gap:6px}
 .presets button{height:34px;padding:0 12px;border-radius:17px;border:1px solid var(--line);background:#faf9f7;font-size:13px;font-weight:600}
-.credit{display:flex;justify-content:center;margin-top:18px;color:#b9b4ac}
+.credit{display:flex;flex-direction:column;align-items:center;gap:4px;margin-top:18px;color:#b9b4ac}
+.credit .pyj-sub{font-size:10px;font-weight:700;letter-spacing:.12em;padding-left:.12em}
 .credit svg{width:34px;height:34px;stroke:none}
 
 #layerList{display:flex;flex-direction:column;gap:4px}
