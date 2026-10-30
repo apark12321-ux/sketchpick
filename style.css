@@ -223,18 +223,17 @@ button.primary-soft{background:var(--accent-soft);border-color:transparent;color
 #replayCv{width:auto;max-width:100%;max-height:calc(100vh - 230px);margin:0 auto}
 
 /* ═══════════ 파스텔 다이어리 테마 ═══════════ */
-@font-face{font-family:'Gmarket';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');font-weight:300;font-display:swap}
-@font-face{font-family:'Gmarket';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');font-weight:500;font-display:swap}
-@font-face{font-family:'Gmarket';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');font-weight:700;font-display:swap}
+@font-face{font-family:'Binggrae';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae.woff') format('woff');font-weight:400 500;font-display:swap}
+@font-face{font-family:'Binggrae';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae-Bold.woff') format('woff');font-weight:700;font-display:swap}
 :root{
   --sky:#6cd3f4; --sky-d:#36b5e3; --sky-soft:#d6f9fe; --butter:#fdf6b8; --pink:#fde1ec; --pink-d:#f2a7c6;
   --lav:#aaa7e0; --mint:#7fd66e; --coral:#f7a98a; --blue:#78c1dc;
   --accent:#36b5e3; --accent-soft:#dcf6fd; --ink:#5b5b5b; --sub:#8b8b8b; --line:#e3eef2;
   --panel:#fffefb; --radius:22px;
   --grid:linear-gradient(rgba(108,211,244,.16) 1px,transparent 1px) 0 0/34px 34px,linear-gradient(90deg,rgba(108,211,244,.16) 1px,transparent 1px) 0 0/34px 34px;
-  font-family:'Gmarket',-apple-system,"Apple SD Gothic Neo",sans-serif;
+  font-family:'Binggrae',-apple-system,"Apple SD Gothic Neo",sans-serif;
 }
-body,button,input,select,textarea{font-family:'Gmarket',-apple-system,"Apple SD Gothic Neo",sans-serif}
+body,button,input,select,textarea{font-family:'Binggrae',-apple-system,"Apple SD Gothic Neo",sans-serif}
 html,body{background:var(--sky-soft);color:var(--ink)}
 #canvasWrap{background:var(--grid),var(--sky-soft)}
 /* 손으로 그은 형광펜 밑줄 */
@@ -329,5 +328,9 @@ button.primary-soft{background:var(--butter);color:#6b5a00}
 #busyText{font-weight:700}
 .ai-badge{display:none}
 /* 인용·안내 문구는 손글씨 */
-.mf .hint,#replayNote{font-family:'Gaegu','Gmarket',sans-serif;font-size:16px;font-weight:700;color:#7a7a7a;line-height:1.35}
+.mf .hint,#replayNote{font-family:'Gaegu','Binggrae',sans-serif;font-size:16px;font-weight:700;color:#7a7a7a;line-height:1.35}
 .sp-deco{stroke:none}.sp-deco path[stroke]{stroke:#fff}.sp-title .hl::after{bottom:.08em}
+
+/* 제목은 굵게, 나머지는 보통 굵기 */
+.mh h2,.sp-title,.ph h3,.step{font-weight:700}
+body{font-weight:400}
