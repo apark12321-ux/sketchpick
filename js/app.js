@@ -170,9 +170,9 @@ function frame() {
   needs = false; if (!S.doc) return;
   const W = cv.width / DPR, H = cv.height / DPR, v = S.view;
   ctx.setTransform(DPR, 0, 0, DPR, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
-  ctx.fillStyle = '#e8e5df'; ctx.fillRect(0, 0, W, H);
+  ctx.clearRect(0, 0, W, H);
   ctx.setTransform(DPR * v.s, 0, 0, DPR * v.s, DPR * v.x, DPR * v.y);
-  ctx.save(); ctx.shadowColor = 'rgba(0,0,0,.18)'; ctx.shadowBlur = 24 * v.s; ctx.shadowOffsetY = 4 * v.s; ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, S.doc.w, S.doc.h); ctx.restore();
+  ctx.save(); ctx.shadowColor = 'rgba(80,140,170,.22)'; ctx.shadowBlur = 30 * v.s; ctx.shadowOffsetY = 8 * v.s; ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, S.doc.w, S.doc.h); ctx.restore();
   ctx.imageSmoothingQuality = 'high';
   const useHi = v.s * DPR > 1.15 && !gesture && !(action && (action.type === 'pan' || action.type === 'move'));
   if (useHi) {
