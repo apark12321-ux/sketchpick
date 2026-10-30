@@ -1,0 +1,13 @@
+{
+  "name": "스케치픽 — 어반스케치 스튜디오",
+  "short_name": "스케치픽",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#1748c9",
+  "theme_color": "#1748c9",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
