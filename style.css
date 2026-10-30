@@ -262,7 +262,7 @@ html,body{background:var(--sky-soft);color:var(--ink)}
 /* 왼쪽 도구 */
 #toolbar{border-radius:28px;background:#fff;box-shadow:0 6px 0 rgba(108,211,244,.25),0 10px 30px rgba(80,140,170,.12)}
 #toolbar [data-tool]{border-radius:18px;color:var(--ink)}
-#toolbar [data-tool] em{font-weight:500}
+#toolbar [data-tool] em{font-size:12.5px;font-weight:700;letter-spacing:0;line-height:1.25}
 #toolbar [data-tool].on{background:var(--butter);color:#4a4a4a}
 .vs .knob{border-color:var(--sky-d)}
 .sw.on{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--pink-d)}
