@@ -1,1 +1,7 @@
-{ "name": "sketchpick", "private": true, "type": "module" }
+{
+  "name": "sketchpick",
+  "private": true,
+  "type": "module",
+  "scripts": { "build": "node build.mjs" },
+  "devDependencies": { "esbuild": "^0.24.0", "terser": "^5.36.0" }
+}

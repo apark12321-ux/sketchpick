@@ -745,7 +745,7 @@ function loadImageFile(f) {
 }
 async function fetchUrlImage(u) {
   u = (u || '').trim(); if (!/^https?:\/\//i.test(u)) throw new Error('https:// 로 시작하는 이미지 주소를 넣어 주세요');
-  const r = await fetch('/api/fetch-image?url=' + encodeURIComponent(u));
+  const r = await fetch('/api/fetch?url=' + encodeURIComponent(u));
   let j = {}; try { j = await r.json(); } catch {}
   if (!r.ok || !j.dataUrl) throw new Error(j.error || '이 화면(미리보기)에서는 주소로 불러올 수 없어요. 사진으로 올려 주세요');
   return shrinkDataURL(j.dataUrl);
@@ -976,7 +976,7 @@ async function generateFromText(desc, o) {
   finally { busy(null); }
 }
 
-// ───────── 명화 엔진 (FLUX.2) ─────────
+// ───────── 명화 엔진 ─────────
 const r16 = v => Math.max(256, Math.min(1920, Math.round(v / 16) * 16));
 function loadImg(src) { return new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = src; }); }
 function toDataURL(src, maxSide, q = 0.9) {
@@ -1451,11 +1451,11 @@ const ICON = {
   fetch('/api/ai').then(r => r.ok ? r.json() : { ready: false }).then(j => { S.api = !!j.ready; }).catch(() => {});
   fetch('/api/paint').then(r => r.ok ? r.json() : { ready: false }).catch(() => ({ ready: false })).then(j => {
     S.paintApi = !!j.ready;
-    $$('.ai-badge').forEach(b => b.textContent = S.paintApi ? '명화 엔진 연결됨' : '빠른 엔진 모드');
+    $$('.ai-badge').forEach(b => b.textContent = '');
     $('#engMaster').checked = S.paintApi; $('#engQuick').checked = !S.paintApi;
-    $('#engMasterNote').textContent = S.paintApi ? 'FLUX.2 · 하루 무료 한도 안에서' : '연결 전 — 설정 필요';
+    $('#engMasterNote').textContent = S.paintApi ? '최고 품질 · 하루 사용량 제한' : '준비 중';
   });
   document.addEventListener('visibilitychange', () => { if (document.hidden) saveNow(); });
   setTimeout(() => { $('#splash').classList.add('out'); setTimeout(() => $('#splash').remove(), 600); if (!opened) setTimeout(() => openModal('#modal-generate'), 500); }, 1300);
 })();
-window.__sp = S;
+if (location.hostname === 'localhost') window.__sp = S;

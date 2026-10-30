@@ -1,11 +1,13 @@
 {
-  "functions": { "api/ai.js": { "maxDuration": 120 } },
+  "buildCommand": "npm run build",
+  "outputDirectory": "public",
+  "functions": { "api/ai.js": { "maxDuration": 120 }, "api/paint.js": { "maxDuration": 120 } },
   "rewrites": [
     { "source": "/icon-180.png", "destination": "/api/icon?s=180" },
     { "source": "/icon-192.png", "destination": "/api/icon?s=192" },
     { "source": "/icon-512.png", "destination": "/api/icon?s=512" }
   ],
   "headers": [
-    { "source": "/(.*)", "headers": [ { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" } ] }
+    { "source": "/(.*)", "headers": [ { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }, { "key": "X-Content-Type-Options", "value": "nosniff" } ] }
   ]
 }

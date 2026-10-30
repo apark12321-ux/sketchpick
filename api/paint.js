@@ -81,7 +81,7 @@ export default async function handler(req, res) {
       catch (e) { lastErr = e; if (e.status === 401 || e.status === 403) break; }
     }
     const quota = /neuron|quota|limit|429/i.test(lastErr?.message || '') || lastErr?.status === 429;
-    return res.status(502).json({ error: quota ? '오늘의 무료 생성량을 다 썼어요 (한국 시간 오전 9시에 초기화)' : '명화 엔진 오류: ' + (lastErr?.message || '') });
+    return res.status(502).json({ error: quota ? '오늘의 무료 생성량을 다 썼어요 (내일 다시 쓸 수 있어요)' : '명화 엔진 오류: ' + (lastErr?.message || '') });
   } catch (e) {
     return res.status(500).json({ error: e.message || '처리 오류' });
   }
